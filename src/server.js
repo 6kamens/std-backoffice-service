@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
   });
 
 
-app.use(routes);
+app.use('/api',routes);
 
 app.use(errHandler.errorHandler);
 

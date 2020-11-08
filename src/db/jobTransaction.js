@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 
 const schema = mongoose.Schema({
     request_date : {
@@ -7,6 +8,7 @@ const schema = mongoose.Schema({
     },
     job_code:{
         type:String,
+        unique : true,
         required:true
     },
     subject : {
@@ -59,5 +61,8 @@ const schema = mongoose.Schema({
         type:String
     }
 });
+
+schema.plugin(uniqueValidator);
+
 
 module.exports = mongoose.model('job_transaction',schema);
