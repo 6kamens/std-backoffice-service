@@ -7,15 +7,8 @@ const addTransaction = async (req)=>{
     newData.tutor_id = "";
     newData.memo = "";
 
-    return new Promise(async (resolve,reject)=>{
-        try {
-            const response = await newData.save();
-            resolve(response);
-        } catch (error) {
-            reject(error) ;
-        }
-    })
-       
+    const response = await newData.save();
+    return response;
 
 };
 
